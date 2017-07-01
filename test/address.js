@@ -60,7 +60,7 @@ describe('Address', function() {
     invalidbase58.map(function(d) {
       it('should describe input ' + d[0].slice(0, 10) + '... as invalid', function() {
         expect(function() {
-          return new Address(d[0]);
+          return new Address(d[0], 'livenet');
         }).to.throw(Error);
       });
     });
@@ -276,7 +276,7 @@ describe('Address', function() {
 
     it('should error because of incorrect length buffer for transform buffer', function() {
       (function() {
-        return Address._transformBuffer(new Buffer(20));
+        return Address._transformBuffer(new Buffer(20), 'livenet');
       }).should.throw('Address buffers must be exactly 21 bytes.');
     });
 
