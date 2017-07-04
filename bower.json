@@ -1,18 +1,19 @@
 {
-  "name": "bitcore-lib",
-  "main": "./bitcore-lib.min.js",
+  "name": "altcore-lib",
+  "main": "./altcore-lib.min.js",
   "version": "0.13.19",
   "homepage": "http://bitcore.io",
   "authors": [
-    "BitPay, Inc."
+    "Chris Priest"
   ],
-  "description": "A pure, powerful core for your bitcoin project.",
+  "description": "A pure, powerful core for your altcoin project.",
   "moduleType": [
     "globals"
   ],
   "keywords": [
     "bitcoin",
     "bitcore",
+    "altcoin",
     "btc",
     "satoshi"
   ],

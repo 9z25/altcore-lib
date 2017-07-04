@@ -35,7 +35,7 @@ describe('Address', function() {
 
   it('should throw an error because of bad type param', function() {
     (function() {
-      return new Address(PKHLivenet[0], 'livenet', 'pubkey');
+      return new Address(PKHLivenet[0], 'btc', 'pubkey');
     }).should.throw('Third argument must be "pubkeyhash" or "scripthash"');
   });
 
@@ -49,7 +49,7 @@ describe('Address', function() {
           } else if (d[2].addrType === 'pubkey') {
             type = 'pubkeyhash';
           }
-          var network = 'livenet';
+          var network = 'btc';
           if (d[2].isTestnet) {
             network = 'testnet';
           }
@@ -60,7 +60,7 @@ describe('Address', function() {
     invalidbase58.map(function(d) {
       it('should describe input ' + d[0].slice(0, 10) + '... as invalid', function() {
         expect(function() {
-          return new Address(d[0], 'livenet');
+          return new Address(d[0], 'btc');
         }).to.throw(Error);
       });
     });
@@ -124,7 +124,7 @@ describe('Address', function() {
     });
 
     it('isValid returns true on a valid address', function() {
-      var valid = Address.isValid('37BahqRsFrAd3qLiNNwLNV3AWMRD7itxTo', 'livenet');
+      var valid = Address.isValid('37BahqRsFrAd3qLiNNwLNV3AWMRD7itxTo', 'btc');
       valid.should.equal(true);
     });
 
@@ -163,14 +163,14 @@ describe('Address', function() {
 
     it('validates correctly the P2PKH livenet test vector with "livenet" parameter', function() {
       for (var i = 0; i < PKHLivenet.length; i++) {
-        var error = Address.getValidationError(PKHLivenet[i], 'livenet');
+        var error = Address.getValidationError(PKHLivenet[i], 'btc');
         should.not.exist(error);
       }
     });
 
     it('should not validate if checksum is invalid', function() {
       for (var i = 0; i < badChecksums.length; i++) {
-        var error = Address.getValidationError(badChecksums[i], 'livenet', 'pubkeyhash');
+        var error = Address.getValidationError(badChecksums[i], 'btc', 'pubkeyhash');
         should.exist(error);
         error.message.should.equal('Checksum mismatch');
       }
@@ -184,7 +184,7 @@ describe('Address', function() {
         error.message.should.equal('Address has mismatched network type.');
       }
       for (i = 0; i < PKHTestnet.length; i++) {
-        error = Address.getValidationError(PKHTestnet[i], 'livenet', 'pubkeyhash');
+        error = Address.getValidationError(PKHTestnet[i], 'btc', 'pubkeyhash');
         should.exist(error);
         error.message.should.equal('Address has mismatched network type.');
       }
@@ -192,7 +192,7 @@ describe('Address', function() {
 
     it('should not validate on a type mismatch', function() {
       for (var i = 0; i < PKHLivenet.length; i++) {
-        var error = Address.getValidationError(PKHLivenet[i], 'livenet', 'scripthash');
+        var error = Address.getValidationError(PKHLivenet[i], 'btc', 'scripthash');
         should.exist(error);
         error.message.should.equal('Address has mismatched type.');
       }
