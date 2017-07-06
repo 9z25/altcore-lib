@@ -1,5 +1,5 @@
 
 
-var altcoreTasks = require('bitcore-build');
+var altcoreTasks = require('altcore-build');
 
 altcoreTasks('lib');
