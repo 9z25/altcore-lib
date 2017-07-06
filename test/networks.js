@@ -113,7 +113,7 @@ describe('Networks', function() {
   });
 
   it('converts to string using the "name" property', function() {
-    networks.livenet.toString().should.equal('livenet');
+    networks.livenet.toString().should.equal('Bitcoin');
   });
 
   it('network object should be immutable', function() {

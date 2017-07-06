@@ -172,8 +172,8 @@ describe('PrivateKey', function() {
        }).to.throw(TypeError);
     });
 
-    it('should create a livenet private key', function() {
-      var privkey = new PrivateKey(BN.fromBuffer(buf), 'livenet');
+    it('should create a btc private key', function() {
+      var privkey = new PrivateKey(BN.fromBuffer(buf), 'btc');
       privkey.toWIF().should.equal(wifLivenet);
     });
 
@@ -204,14 +204,14 @@ describe('PrivateKey', function() {
       var json = JSON.stringify({
         bn: '96c132224121b509b7d0a16245e957d9192609c5637c6228311287b1be21627a',
         compressed: false,
-        network: 'livenet'
+        network: 'Bitcoin'
       });
       var key = PrivateKey.fromObject(JSON.parse(json));
       JSON.stringify(key).should.equal(json);
     });
 
     it('input json should correctly initialize network field', function() {
-      ['livenet', 'testnet', 'mainnet'].forEach(function (net) {
+      ['btc', 'testnet', 'mainnet'].forEach(function (net) {
         var pk = PrivateKey.fromObject({
           bn: '96c132224121b509b7d0a16245e957d9192609c5637c6228311287b1be21627a',
           compressed: false,
@@ -277,7 +277,7 @@ describe('PrivateKey', function() {
     it('should output known livenet address for console', function() {
       var privkey = PrivateKey.fromWIF('L3T1s1TYP9oyhHpXgkyLoJFGniEgkv2Jhi138d7R2yJ9F4QdDU2m');
       privkey.inspect().should.equal(
-        '<PrivateKey: b9de6e778fe92aa7edb69395556f843f1dce0448350112e14906efc2a80fa61a, network: livenet>'
+        '<PrivateKey: b9de6e778fe92aa7edb69395556f843f1dce0448350112e14906efc2a80fa61a, network: Bitcoin>'
       );
     });
 
@@ -290,7 +290,7 @@ describe('PrivateKey', function() {
 
     it('outputs "uncompressed" for uncompressed imported WIFs', function() {
       var privkey = PrivateKey.fromWIF(wifLivenetUncompressed);
-      privkey.inspect().should.equal('<PrivateKey: 96c132224121b509b7d0a16245e957d9192609c5637c6228311287b1be21627a, network: livenet, uncompressed>');
+      privkey.inspect().should.equal('<PrivateKey: 96c132224121b509b7d0a16245e957d9192609c5637c6228311287b1be21627a, network: Bitcoin, uncompressed>');
     });
   });
 
@@ -320,7 +320,7 @@ describe('PrivateKey', function() {
 
   describe('buffer serialization', function() {
     it('returns an expected value when creating a PrivateKey from a buffer', function() {
-      var privkey = new PrivateKey(BN.fromBuffer(buf), 'livenet');
+      var privkey = new PrivateKey(BN.fromBuffer(buf), 'btc');
       privkey.toString().should.equal(buf.toString('hex'));
     });
 
@@ -358,7 +358,7 @@ describe('PrivateKey', function() {
   describe('#toBigNumber', function() {
     it('should output known BN', function() {
       var a = BN.fromBuffer(buf);
-      var privkey = new PrivateKey(a, 'livenet');
+      var privkey = new PrivateKey(a, 'btc');
       var b = privkey.toBigNumber();
       b.toString('hex').should.equal(a.toString('hex'));
     });
@@ -430,7 +430,7 @@ describe('PrivateKey', function() {
 
     it('should convert this known PrivateKey to known PublicKey and preserve compressed=true', function() {
       var privwif = 'L3T1s1TYP9oyhHpXgkyLoJFGniEgkv2Jhi138d7R2yJ9F4QdDU2m';
-      var privkey = new PrivateKey(privwif, 'livenet');
+      var privkey = new PrivateKey(privwif, 'btc');
       var pubkey = privkey.toPublicKey();
       pubkey.compressed.should.equal(true);
     });
