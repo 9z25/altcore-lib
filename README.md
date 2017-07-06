@@ -1,11 +1,11 @@
-Bitcore Library
+Altcore Library
 =======
 
-[![NPM Package](https://img.shields.io/npm/v/bitcore-lib.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-lib)
-[![Build Status](https://img.shields.io/travis/bitpay/bitcore-lib.svg?branch=master&style=flat-square)](https://travis-ci.org/bitpay/bitcore-lib)
-[![Coverage Status](https://img.shields.io/coveralls/bitpay/bitcore-lib.svg?style=flat-square)](https://coveralls.io/r/bitpay/bitcore-lib)
+[![NPM Package](https://img.shields.io/npm/v/altcore-lib.svg?style=flat-square)](https://www.npmjs.org/package/altcore-lib)
+[![Build Status](https://img.shields.io/travis/priestc/altcore-lib.svg?branch=master&style=flat-square)](https://travis-ci.org/priestc/altcore-lib)
+[![Coverage Status](https://img.shields.io/coveralls/priestc/altcore-lib.svg?style=flat-square)](https://coveralls.io/r/priestc/altcore-lib)
 
-A pure and powerful JavaScript Bitcoin library.
+A pure and powerful JavaScript Bitcoin library. Forked to work with altcoins.
 
 ## Principles
 
@@ -14,11 +14,11 @@ Bitcoin is a powerful new peer-to-peer platform for the next generation of finan
 ## Get Started
 
 ```
-npm install bitcore-lib
+npm install altcore-lib
 ```
 
 ```
-bower install bitcore-lib
+bower install altcore-lib
 ```
 
 ## Documentation
@@ -55,27 +55,19 @@ Please send pull requests for bug fixes, code optimization, and ideas for improv
 
 ## Building the Browser Bundle
 
-To build a bitcore-lib full bundle for the browser:
+To build a altcore-lib full bundle for the browser:
 
 ```sh
 gulp browser
 ```
 
-This will generate files named `bitcore-lib.js` and `bitcore-lib.min.js`.
-
-You can also use our pre-generated files, provided for each release along with a PGP signature by one of the project's maintainers. To get them, checkout a release commit (for example, https://github.com/bitpay/bitcore-lib/commit/e33b6e3ba6a1e5830a079e02d949fce69ea33546 for v0.12.6).
-
-To verify signatures, use the following PGP keys:
-- @braydonf: https://pgp.mit.edu/pks/lookup?op=get&search=0x9BBF07CAC07A276D `D909 EFE6 70B5 F6CC 89A3 607A 9BBF 07CA C07A 276D`
-- @gabegattis: https://pgp.mit.edu/pks/lookup?op=get&search=0x441430987182732C `F3EA 8E28 29B4 EC93 88CB  B0AA 4414 3098 7182 732C`
-- @kleetus: https://pgp.mit.edu/pks/lookup?op=get&search=0x33195D27EF6BDB7F `F8B0 891C C459 C197 65C2 5043 3319 5D27 EF6B DB7F`
-- @matiu: https://pgp.mit.edu/pks/lookup?op=get&search=0x9EDE6DE4DE531FAC `25CE ED88 A1B1 0CD1 12CD  4121 9EDE 6DE4 DE53 1FAC`
+This will generate files named `altcore-lib.js` and `altcore-lib.min.js`.
 
 
 ## Development & Tests
 
 ```sh
-git clone https://github.com/bitpay/bitcore-lib
+git clone https://github.com/priestc/altcore-lib
 cd bitcore-lib
 npm install
 ```
@@ -92,5 +84,3 @@ or create a test coverage report (you can open `coverage/lcov-report/index.html`
 ## License
 
 Code released under [the MIT license](https://github.com/bitpay/bitcore-lib/blob/master/LICENSE).
-
-Copyright 2013-2017 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.

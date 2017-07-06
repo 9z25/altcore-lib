@@ -1,70 +1,71 @@
 'use strict';
 
-var bitcore = module.exports;
+var altcore = module.exports;
 
 // module information
-bitcore.version = 'v' + require('./package.json').version;
-bitcore.versionGuard = function(version) {
+altcore.version = 'v' + require('./package.json').version;
+altcore.versionGuard = function(version) {
   if (version !== undefined) {
-    var message = 'More than one instance of bitcore-lib found. ' +
-      'Please make sure to require bitcore-lib and check that submodules do' +
-      ' not also include their own bitcore-lib dependency.';
+    var message = 'More than one instance of altcore-lib found. ' +
+      'Please make sure to require altcore-lib and check that submodules do' +
+      ' not also include their own altcore-lib dependency.';
     throw new Error(message);
   }
 };
-bitcore.versionGuard(global._bitcore);
-global._bitcore = bitcore.version;
+altcore.versionGuard(global._altcore);
+global._altcore = altcore.version;
 
 // crypto
-bitcore.crypto = {};
-bitcore.crypto.BN = require('./lib/crypto/bn');
-bitcore.crypto.ECDSA = require('./lib/crypto/ecdsa');
-bitcore.crypto.Hash = require('./lib/crypto/hash');
-bitcore.crypto.Random = require('./lib/crypto/random');
-bitcore.crypto.Point = require('./lib/crypto/point');
-bitcore.crypto.Signature = require('./lib/crypto/signature');
+altcore.crypto = {};
+altcore.crypto.BN = require('./lib/crypto/bn');
+altcore.crypto.ECDSA = require('./lib/crypto/ecdsa');
+altcore.crypto.Hash = require('./lib/crypto/hash');
+altcore.crypto.Random = require('./lib/crypto/random');
+altcore.crypto.Point = require('./lib/crypto/point');
+altcore.crypto.Signature = require('./lib/crypto/signature');
 
 // encoding
-bitcore.encoding = {};
-bitcore.encoding.Base58 = require('./lib/encoding/base58');
-bitcore.encoding.Base58Check = require('./lib/encoding/base58check');
-bitcore.encoding.BufferReader = require('./lib/encoding/bufferreader');
-bitcore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
-bitcore.encoding.Varint = require('./lib/encoding/varint');
+altcore.encoding = {};
+altcore.encoding.Base58 = require('./lib/encoding/base58');
+altcore.encoding.Base58Check = require('./lib/encoding/base58check');
+altcore.encoding.BufferReader = require('./lib/encoding/bufferreader');
+altcore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
+altcore.encoding.Varint = require('./lib/encoding/varint');
 
 // utilities
-bitcore.util = {};
-bitcore.util.buffer = require('./lib/util/buffer');
-bitcore.util.js = require('./lib/util/js');
-bitcore.util.preconditions = require('./lib/util/preconditions');
+altcore.util = {};
+altcore.util.buffer = require('./lib/util/buffer');
+altcore.util.js = require('./lib/util/js');
+altcore.util.preconditions = require('./lib/util/preconditions');
 
 // errors thrown by the library
-bitcore.errors = require('./lib/errors');
+altcore.errors = require('./lib/errors');
 
 // main bitcoin library
-bitcore.Address = require('./lib/address');
-bitcore.Block = require('./lib/block');
-bitcore.MerkleBlock = require('./lib/block/merkleblock');
-bitcore.BlockHeader = require('./lib/block/blockheader');
-bitcore.HDPrivateKey = require('./lib/hdprivatekey.js');
-bitcore.HDPublicKey = require('./lib/hdpublickey.js');
-bitcore.Networks = require('./lib/networks');
-bitcore.Opcode = require('./lib/opcode');
-bitcore.PrivateKey = require('./lib/privatekey');
-bitcore.PublicKey = require('./lib/publickey');
-bitcore.Script = require('./lib/script');
-bitcore.Transaction = require('./lib/transaction');
-bitcore.URI = require('./lib/uri');
-bitcore.Unit = require('./lib/unit');
+altcore.Address = require('./lib/address');
+altcore.Block = require('./lib/block');
+altcore.MerkleBlock = require('./lib/block/merkleblock');
+altcore.BlockHeader = require('./lib/block/blockheader');
+altcore.HDPrivateKey = require('./lib/hdprivatekey.js');
+altcore.HDPublicKey = require('./lib/hdpublickey.js');
+altcore.Networks = require('./lib/networks');
+altcore.Opcode = require('./lib/opcode');
+altcore.PrivateKey = require('./lib/privatekey');
+altcore.PublicKey = require('./lib/publickey');
+altcore.Script = require('./lib/script');
+altcore.Transaction = require('./lib/transaction');
+altcore.URI = require('./lib/uri');
+altcore.Unit = require('./lib/unit');
 
 // dependencies, subject to change
-bitcore.deps = {};
-bitcore.deps.bnjs = require('bn.js');
-bitcore.deps.bs58 = require('bs58');
-bitcore.deps.Buffer = Buffer;
-bitcore.deps.elliptic = require('elliptic');
-bitcore.deps.scryptsy = require('scryptsy');
-bitcore.deps._ = require('lodash');
+altcore.deps = {};
+altcore.deps.bnjs = require('bn.js');
+altcore.deps.bs58 = require('bs58');
+altcore.deps.Buffer = Buffer;
+altcore.deps.elliptic = require('elliptic');
+altcore.deps.groestlhash = require('groestl-hash-js');
+altcore.deps.scryptsy = require('scryptsy');
+altcore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
-bitcore.Transaction.sighash = require('./lib/transaction/sighash');
+altcore.Transaction.sighash = require('./lib/transaction/sighash');
