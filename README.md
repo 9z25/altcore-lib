@@ -9,7 +9,27 @@ A pure and powerful JavaScript Bitcoin library. Forked to work with altcoins.
 
 ## Principles
 
-Bitcoin is a powerful new peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Bitcoin network allows for highly resilient bitcoin infrastructure, and the developer community needs reliable, open-source tools to implement bitcoin apps and services.
+Bitcore is a powerful javascript blockchain library. It was originally built to
+work with the bitcoin and bitcoin testnet networks, and has the ability to
+be extended to other networks, like Namecoin and Litecoin.
+
+Many altcoin communities have forked bitcore-lib to work with their altcoin,
+but thus far, the overwheling majority of these forks are done in such a way
+that makes them *only* work for that altcoin. This means if you want to build an
+application that uses multiple altcoins, you ewill need to include with your application
+multiple versions of the same large library that is mostly the same. This is not
+much of a problem if you are building a desktop application, but for a web application
+(the only platform where javascript has a purpose to exist),
+this is unacceptable.
+
+This fork tries to move all modifications from each bitcore fork in existence and
+makes them available under a single codebase that is roughly the same size as a single
+instance of bitcore-lib.
+
+This fork has expanded the `Networks` functionality found in bitcore-lib, and has kept
+everything else (as much as possible) the same as bitcore-lib. The 'livenet' network
+has been renamed to 'btc'. Only livenets of each currency is supported. The network
+called "testnet" is bitcoin's testnet and is the only testnet supported.
 
 ## Get Started
 
