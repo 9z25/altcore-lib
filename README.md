@@ -16,7 +16,7 @@ be extended to other networks, like Namecoin and Litecoin.
 Many altcoin communities have forked bitcore-lib to work with their altcoin,
 but thus far, the overwheling majority of these forks are done in such a way
 that makes them *only* work for that altcoin. This means if you want to build an
-application that uses multiple altcoins, you ewill need to include with your application
+application that uses multiple altcoins, you will need to include with your application
 multiple versions of the same large library that is mostly the same. This is not
 much of a problem if you are building a desktop application, but for a web application
 (the only platform where javascript has a purpose to exist),
@@ -30,6 +30,10 @@ This fork has expanded the `Networks` functionality found in bitcore-lib, and ha
 everything else (as much as possible) the same as bitcore-lib. The 'livenet' network
 has been renamed to 'btc'. Only livenets of each currency is supported. The network
 called "testnet" is bitcoin's testnet and is the only testnet supported.
+
+## Currencies supported
+
+Bitcoin, Litecoin, ZCash, Dash, Groestlcoin.
 
 ## Get Started
 
