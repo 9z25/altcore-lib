@@ -33,7 +33,8 @@ called "testnet" is bitcoin's testnet and is the only testnet supported.
 
 ## Currencies supported
 
-Bitcoin, Litecoin, ZCash, Dash, Groestlcoin.
+Bitcoin, Litecoin, ZCash, Dash, Groestlcoin, KittehCoin, Fujicoin, BunnyCoin,
+Syscoin 2.1, Dogecoin.
 
 ## Get Started
 
