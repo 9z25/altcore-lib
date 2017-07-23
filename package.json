@@ -49,7 +49,8 @@
     "lodash": "=3.10.1",
     "x11-hash-js": "^1.0.0",
     "groestl-hash-js": "^1.0.0",
-    "scryptsy": "=2.0.0"
+    "scryptsy": "=2.0.0",
+    "keccak": "^1.0.2"
   },
   "devDependencies": {
     "altcore-build": "priestc/altcore-build",
